@@ -41,19 +41,19 @@ def main_menu():
 
     if (op == "SELECT"):
         query = f"SELECT * FROM {tbname}"
-        if (where_cond is not None):
+        if (where_cond != ""):
             query = f"{query} WHERE {where_cond}"
     elif (op == "INSERT"):
         query = f"INSERT INTO {tbname}"
-        if (where_cond is not None):
+        if (where_cond != ""):
             query = f"{query} WHERE {where_cond}"
     elif (op == "DELETE"):
         query = f"DELETE FROM {tbname}"
-        if (where_cond is not None):
+        if (where_cond != ""):
             query = f"{query} WHERE {where_cond}"
     elif (op == "UPDATE"):
         query = f"UPDATE {tbname} SET {set_cond}"
-        if (where_cond is not None):
+        if (where_cond != ""):
             query = f"{query} WHERE {where_cond}"
 
     st.markdown(full_message_temp.format(f"{query} {role}"), unsafe_allow_html=True)
