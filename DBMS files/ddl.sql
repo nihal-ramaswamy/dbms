@@ -77,7 +77,8 @@ create table payment (-- rename pay_desc -> pay_mode
     order_id VARCHAR(10) references product_order(order_id) ON DELETE CASCADE ON UPDATE CASCADE,
     pay_amt INT,
     pay_date DATE,
-    pay_mode VARCHAR
+    pay_mode VARCHAR,
+    approval INT DEFAULT 0
 );
 
 create table cart (
@@ -86,7 +87,7 @@ create table cart (
 );
 
 create table stores (
-    stk_list VARCHAR[] ,
+    stk_id  VARCHAR(10) references stock(stk_id) ON DELETE CASCADE ON UPDATE CASCADE,
     cart_id VARCHAR(10) references cart(cart_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    PRIMARY KEY(cart_id)
+    PRIMARY KEY(stk_id,cart_id)
 );

@@ -48,7 +48,7 @@ insert into stock (stk_id, inv_id, stk_name, stk_desc, stk_cost) values (3545011
 insert into stock (stk_id, inv_id, stk_name, stk_desc, stk_cost) values (6002807961, 3690148299, 'Running Shoes', 'Quality-focused optimizing budgetary management', 7653);
 
 
-insert into  product_order (order_id, cus_id, delivery_method, order_date, delivery_Date) values (9565890671, 2181965863, 'air', '2020-11-10', '2020-11-10');
+insert into  product_order (order_id, cus_id, delivery_method, order_date, delivery_Date) values (9565890671, 2181965863, 'road', '2020-11-10', '2020-11-10');
 insert into  product_order (order_id, cus_id, delivery_method, order_date, delivery_Date) values (4496960720, 2181965863, 'overseas', '2020-12-13', '2021-6-18');
 insert into  product_order (order_id, cus_id, delivery_method, order_date, delivery_Date) values (7687370684, 9626368997, 'road', '2020-11-18', '2021-6-9');
 insert into  product_order (order_id, cus_id, delivery_method, order_date, delivery_Date) values (1123819871, 9626368997, 'road', '2020-12-15', '2021-2-3');
@@ -66,14 +66,14 @@ insert into  orders (order_id, cus_id) values (8761361059, 2695731926);
 insert into  orders (order_id, cus_id) values (6497189210, 2695731926);
 insert into  orders (order_id, cus_id) values (1993216719, 5246490685);
 
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (9719599882, 2181965863, 1584547556, 9565890671, 522, 'COD', '2021-05-10');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (9117294401, 2181965863, 1584547556, 4496960720, 1398, 'UPI', '2021-06-29');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (7064519033, 9626368997, 1584547556, 7687370684, 9485, 'Debit/Credit card', '2021-08-18');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (1238048445, 9626368997, 6191548101, 1123819871, 3513, 'Managed intangible attitude', '2021-06-06');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (4904681268, 2695731926, 6191548101, 7715476629, 578, 'Persevering bifurcated task-force', '2021-09-12');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (3929715312, 2695731926, 6191548101, 8761361059, 7774, 'Seamless zero defect orchestration', '2021-09-09');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (9302317157, 2695731926, 5089474660, 6497189210, 8476, 'User-centric real-time encryption', '2021-05-22');
-insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date) values (2508791061, 5246490685, 5089474660, 1993216719, 5608, 'Progressive next generation application', '2021-08-29');
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (9719599882, 2181965863, 1584547556, 9565890671, 522, 'COD', '2021-05-10',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (9117294401, 2181965863, 1584547556, 4496960720, 1398, 'UPI', '2021-06-29',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (7064519033, 9626368997, 1584547556, 7687370684, 9485, 'Debit/Credit card', '2021-08-18',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (1238048445, 9626368997, 6191548101, 1123819871, 3513, 'Managed intangible attitude', '2021-06-06',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (4904681268, 2695731926, 6191548101, 7715476629, 578, 'Persevering bifurcated task-force', '2021-09-12',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (3929715312, 2695731926, 6191548101, 8761361059, 7774, 'Seamless zero defect orchestration', '2021-09-09',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (9302317157, 2695731926, 5089474660, 6497189210, 8476, 'User-centric real-time encryption', '2021-05-22',1);
+insert into  payment (pay_id, cus_id, emp_id, order_id, pay_amt, pay_mode, pay_date, approval) values (2508791061, 5246490685, 5089474660, 1993216719, 5608, 'Progressive next generation application', '2021-08-29',1);
 
 insert into  cart (cart_id, cus_id) values (4141604063, 2181965863); 
 insert into  cart (cart_id, cus_id) values (3534925645, 2160309173);
@@ -81,11 +81,16 @@ insert into  cart (cart_id, cus_id) values (4202254122, 2695731926);
 insert into  cart (cart_id, cus_id) values (8648101968, 5246490685);
 insert into  cart (cart_id, cus_id) values (5205508521, 9626368997);
 
-insert into  stores (cart_id, stk_list) values (4141604063, '{9998204122, 3545011918}');
-insert into  stores (cart_id, stk_list) values (3534925645, '{3314580509, 3545011918}');
-insert into  stores (cart_id, stk_list) values (4202254122, '{3314580509, 3545011918}');
-insert into  stores (cart_id, stk_list) values (8648101968, '{9998204122, 3545011918}');
-insert into  stores (cart_id, stk_list) values (5205508521, '{9998204122, 3545011918, 3314580509}');
-
+insert into  stores (cart_id, stk_id) values (4141604063, 9998204122);
+insert into  stores (cart_id, stk_id) values (4141604063, 3545011918);
+insert into  stores (cart_id, stk_id) values (3534925645, 3314580509);
+insert into  stores (cart_id, stk_id) values (3534925645, 3545011918);
+insert into  stores (cart_id, stk_id) values (4202254122, 3314580509);
+insert into  stores (cart_id, stk_id) values (4202254122, 3545011918);
+insert into  stores (cart_id, stk_id) values (8648101968, 9998204122);
+insert into  stores (cart_id, stk_id) values (8648101968, 3545011918);
+insert into  stores (cart_id, stk_id) values (5205508521, 9998204122);
+insert into  stores (cart_id, stk_id) values (5205508521, 3314580509);
+insert into  stores (cart_id, stk_id) values (5205508521, 3545011918);
 
 

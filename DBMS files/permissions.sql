@@ -54,12 +54,3 @@ create user hr with nosuperuser;
 grant select on employee to hr;
 grant update on employee to hr;
 --list of all emp details
-
-
-ALTER USER hr PASSWORD 'myPassword';
-ALTER USER accountant PASSWORD 'myPassword';
-ALTER USER mover PASSWORD 'myPassword';
-ALTER USER manager PASSWORD 'myPassword';
-ALTER USER admin PASSWORD 'myPassword';
-ALTER USER emp PASSWORD 'myPassword';
-ALTER USER cust PASSWORD 'myPassword';
