@@ -1,0 +1,7 @@
+bin/
+*.sublime*
+etc/
+include/
+lib/
+lib64
+share/
