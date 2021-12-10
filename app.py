@@ -139,7 +139,7 @@ def complex_queries(username, pw):
         password=pw
     )
     cur = con.cursor()
-    queries = {"get all stock deets which is there in 3 cust's carts", 'get list of all emp who manage at least 1 inv or approved one payment', "for a particular emp list all the approved customer's emails",'get all inv that they have to visit for a particular cart','get payments such that a particular payment mode and delivery method is selected (nested)', 'get cost from stores'}
+    queries = {"get all stock deets which is there in 3 cust's carts", 'get list of all emp who manage at least 1 inv or approved one payment', "for a particular emp list all the approved customer's emails",'get all inv that they have to visit for a particular cart','get payments such that a particular payment mode and delivery method is selected', 'get cost from stores'}
     option = st.selectbox("Choose query", options=queries)
 
     if (option == "get all stock deets which is there in 3 cust's carts"):
@@ -180,6 +180,10 @@ def complex_queries(username, pw):
         pay_mode  = st.text_input('Enter pay_mode')
         delivery_method  = st.text_input('Enter delivery_method')
         cur.execute(f"select pay_id, cus_id, order_id, pay_amt, pay_mode, pay_date from payment where payment.pay_mode = '{pay_mode}' and payment.order_id in (select order_id from product_order where delivery_method = '{delivery_method}') ;")
+
+        df = pd.DataFrame(cur.fetchall())
+        df.columns = ['pay_id', 'cus_id', 'order_id', 'pay_amt', 'pay_mode', 'pay_date']
+        st.table(df)
 
     elif (option == 'get cost from stores'):
         st.markdown(full_message_temp.format("get cost from stores"),unsafe_allow_html=True)
